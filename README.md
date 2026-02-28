@@ -1,11 +1,9 @@
 # Kubernetes (K8s)
-
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/569/badge)](https://bestpractices.coreinfrastructure.org/projects/569) [![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/kubernetes)](https://goreportcard.com/report/github.com/kubernetes/kubernetes) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kubernetes/kubernetes?sort=semver)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/kubernetes/kubernetes?sort=semver)
 
 <img src="https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png" width="100">
 
-----
-
+* TODO: 
 Kubernetes, also known as K8s, is an open source system for managing [containerized applications]
 across multiple hosts. It provides basic mechanisms for the deployment, maintenance,
 and scaling of applications.
@@ -83,10 +81,6 @@ That said, if you have questions, reach out to us
 
 The [Calendar](https://www.kubernetes.dev/resources/calendar/) has the list of all the meetings in the Kubernetes community in a single location.
 
-## Adopters
-
-The [User Case Studies](https://kubernetes.io/case-studies/) website has real-world use cases of organizations across industries that are deploying/migrating to Kubernetes.
-
 ## Governance 
 
 Kubernetes project is governed by a framework of principles, values, policies and processes to help our community and constituents towards our shared goals.
@@ -95,6 +89,6 @@ The [Kubernetes Community](https://github.com/kubernetes/community/blob/master/g
 
 The [Kubernetes Steering community repo](https://github.com/kubernetes/steering) is used by the Kubernetes Steering Committee, which oversees governance of the Kubernetes project.
 
-## Roadmap 
+## Roadmap / Enhancements
 
-The [Kubernetes Enhancements repo](https://github.com/kubernetes/enhancements) provides information about Kubernetes releases, as well as feature tracking and backlogs.
+* [Kubernetes Enhancements repo](https://github.com/kubernetes/enhancements) 

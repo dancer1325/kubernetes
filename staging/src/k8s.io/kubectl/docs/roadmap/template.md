@@ -1,4 +1,5 @@
-Use this template for writing roadmaps for releases
+* template
+  * -- for -- writing roadmaps for releases
 
 # Release 1.X roadmap
 

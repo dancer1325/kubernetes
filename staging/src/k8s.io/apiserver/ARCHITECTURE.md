@@ -2,22 +2,21 @@
 
 ## 1. Server Composition
 
-The `kube-apiserver` binary is not one server, but a **server chain** of three distinct
-`GenericAPIServer` instances: the core Kubernetes API, API extensions (CRDs), and the aggregation
-layer.
-
-This composition is managed by a layered configuration system, starting with command-line
-flags parsed by `options` structs (e.g., `RecommendedOptions` in `pkg/server/options`), which
-populate a `Config` object that is then used to instantiate the `GenericAPIServer`
-instances. The construction of this delegation chain can be found in the `CreateServerChain`
-function in `cmd/kube-apiserver/app/server.go`.
+* `kube-apiserver` binary
+  * != server
+  * == **server chain** / has 3 distinct `GenericAPIServer` instances (core Kubernetes API + API extensions (CRDs) + aggregation layer)
+    * managed -- by a -- layered configuration system
+      * CL flags parsed -- , by `options` structs, to -- populate a `Config` object
+        * _Example:_ [`RecommendedOptions`](/staging/src/k8s.io/apiserver/pkg/server/options)
+      * `Config` object is used -- to -- instantiate the `GenericAPIServer` instances
+    * [`CreateServerChain()`](/cmd/kube-apiserver/app/server.go)
 
 ```mermaid
 graph TD
     subgraph Incoming Request
         direction LR
         A[User/Client] --> B{/apis/apps/v1/deployments};
-    end
+    end wake up
 
     subgraph kube-apiserver process
         direction LR
