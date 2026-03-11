@@ -1,11 +1,18 @@
 # Kubernetes's OpenAPI Specification
 
-This folder contains an [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification) for Kubernetes API.
+* Kubernetes API [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification)
+  * ⚠️generated ⚠️-- through -- running [`update-openapi-spec.sh`](../../hack/update-openapi-spec.sh)
+    * == documentation
+    * != use -- as -- specification to generate
+      * Reason:🧠Kubernetes API is generated -- from -- source code 🧠
+
+## how is it generated
 
 ## Vendor Extensions
 
-Kubernetes extends OpenAPI using these extensions. Note the version that
-extensions have been added.
+* allows
+  * extend OpenAPI
+    * ⚠️IMPORTANT the Kubernetes version | extensions are added⚠️
 
 ### `x-kubernetes-group-version-kind`
 
@@ -84,5 +91,5 @@ are associated with a [kubernetes resource](https://git.k8s.io/community/contrib
 
 ### `x-kubernetes-patch-strategy` and `x-kubernetes-patch-merge-key`
 
-Some of the definitions may have these extensions. For more information about PatchStrategy and PatchMergeKey see
-[strategic-merge-patch](https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
+* ALLOWED | some definitions
+* [MORE](https://git.k8s.io/community/contributors/devel/sig-api-machinery/strategic-merge-patch.md)

@@ -57,32 +57,27 @@ import (
 )
 ```
 
-## Creating a new repository in staging
+## how to create a NEW repository | staging?
 
-### Adding the staging repository in `kubernetes/kubernetes`:
+### add the staging repository | this repo
 
-1. Send an email to the SIG Architecture [mailing
-   list](https://groups.google.com/a/kubernetes.io/g/sig-architecture)
-   and the mailing list of the SIG which would own the repo requesting approval
-   for creating the staging repository.
-
-2. Once approval has been granted, create the new staging repository.
-
-3. Update
-   [`import-restrictions.yaml`](/staging/publishing/import-restrictions.yaml)
-   to add the list of other staging repos that this new repo can import.
-
-4. Add all mandatory template files to the staging repo as mentioned in
-   https://github.com/kubernetes/kubernetes-template-project.
-
-5. Make sure that the `.github/PULL_REQUEST_TEMPLATE.md` and `CONTRIBUTING.md`
-   files mention that PRs are not directly accepted to the repo.
-
-6. Ensure that `docs.go` file is added. Refer to
-   [#kubernetes/kubernetes#91354](https://github.com/kubernetes/kubernetes/blob/release-1.24/staging/src/k8s.io/client-go/doc.go)
-   for reference.
-
-7. NOTE: Do not edit go.mod or go.sum in the new repo (staging/src/k8s.io/<newrepo>/) manually. Run the following instead:
+* steps
+  1. send an email requesting approval
+     * -- to the -- 
+        * [SIG Architecture mailing list](https://groups.google.com/a/kubernetes.io/g/sig-architecture)
+        * SIG mailing list / would own the repo 
+  2. if approval is granted -> create the NEW staging repository
+  3. Update
+     [`import-restrictions.yaml`](/staging/publishing/import-restrictions.yaml)
+     to add the list of other staging repos that this new repo can import.
+  4. Add all mandatory template files to the staging repo as mentioned in
+     https://github.com/kubernetes/kubernetes-template-project.
+  5. Make sure that the `.github/PULL_REQUEST_TEMPLATE.md` and `CONTRIBUTING.md`
+     files mention that PRs are not directly accepted to the repo.
+  6. Ensure that `docs.go` file is added. Refer to
+     [#kubernetes/kubernetes#91354](https://github.com/kubernetes/kubernetes/blob/release-1.24/staging/src/k8s.io/client-go/doc.go)
+     for reference.
+  7. NOTE: Do not edit go.mod or go.sum in the new repo (staging/src/k8s.io/<newrepo>/) manually. Run the following instead:
 
 ```
   ./hack/update-vendor.sh
