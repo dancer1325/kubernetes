@@ -1,21 +1,16 @@
 # Legacy Cluster add-ons
 
-For more information on add-ons see [the documentation](https://kubernetes.io/docs/concepts/cluster-administration/addons/).
-
-## Overview
-
-Cluster add-ons are resources like Services and Deployments (with pods) that are
-shipped with the Kubernetes binaries and are considered an inherent part of the
-Kubernetes clusters.
-
-There are currently two classes of add-ons:
-- Add-ons that will be reconciled.
-- Add-ons that will be created if they don't exist.
-
-More details could be found in [addon-manager/README.md](addon-manager/README.md).
+* Cluster add-ons
+  * == [Kubernetes API resources](https://kubernetes.io/docs/reference/glossary/?all=true)
+    * == SAME -- as -- `Service` & `Deployment` / shipped -- with the -- Kubernetes binaries
+  * [MORE](https://kubernetes.io/docs/concepts/cluster-administration/addons/)
+  * [classes](addon-manager/README.md)
+    - Add-ons / will be reconciled
+    - Add-ons / if they do NOT exist -> will be created
 
 ## Cooperating Horizontal / Vertical Auto-Scaling with "reconcile class addons"
 
+TODO: 
 "Reconcile" class addons will be periodically reconciled to the original state given
 by the initial config. In order to make Horizontal / Vertical Auto-scaling functional,
 the related fields in config should be left unset. More specifically, leave `replicas`
