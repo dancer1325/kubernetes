@@ -1,57 +1,24 @@
-> ⚠️ **This is an automatically published [staged repository](https://git.k8s.io/kubernetes/staging#external-repository-staging-area) for Kubernetes**.   
-> Contributions, including issues and pull requests, should be made to the main Kubernetes repository: [https://github.com/kubernetes/kubernetes](https://github.com/kubernetes/kubernetes).  
-> This repository is read-only for importing, and not used for direct contributions.  
-> See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
+* goal
+  * CRI definition
 
-## Purpose
-
-This repository contains the definitions for the Container Runtime Interface (CRI).
-CRI is a plugin interface which enables kubelet to use a wide variety of container runtimes,
-without the need to recompile. CRI consists of a protocol buffers and gRPC API.
-Read more about CRI API at [kubernetes docs](https://kubernetes.io/docs/concepts/architecture/cri/).
-
-The repository [kubernetes/cri-api](https://github.com/kubernetes/cri-api) is a mirror of https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/cri-api.
-Please do **not** file issues or submit PRs against the [kubernetes/cri-api](https://github.com/kubernetes/cri-api)
-repository as it is readonly, all development is done in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes).
-
-The CRI API is defined in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
-repository and is **only** intended to be used for kubelet to container runtime 
-interactions, or for node-level troubleshooting using a tool such as `crictl`.
-It is **not** a common purpose container runtime API for general use, and is intended
-to be Kubernetes-centric. We try to avoid it, but there may be logic within a container
-runtime that optimizes for the order or specific parameters of call(s) that the kubelet
-makes.
+* CRI API
+  * approach
+    * Kubernetes-centric
+  * use cases
+    * kubelet can container runtime interactions
+    * node-level troubleshooting -- through -- some tool
+      * _Example:_ `crictl`
+  * ❌NOT use cases❌
+    * common purpose container runtime API
+  * ⚠️limitations⚠️
+    * exist coupling BETWEEN Kubelet -- & -- CRI API
 
 ## Version skew policy and feature development
 
-Please read about:
+TODO: 
 
 - [CRI API version skew policy](https://kubernetes.dev/docs/code/cri-api-version-skew-policy/)
 - [Kubernetes feature development and container runtimes](https://kubernetes.dev/docs/code/cri-api-dev-policies/)
-
-## Community, discussion, contribution, and support
-
-Learn how to engage with the Kubernetes community on the [community
-page](https://www.k8s.dev/community/).
-
-You can reach the maintainers of this repository at:
-
-- Slack: #sig-node (on https://kubernetes.slack.com -- get an
-  invite at [slack.kubernetes.io](https://slack.kubernetes.io))
-- Mailing List:
-  https://groups.google.com/a/kubernetes.io/g/sig-node
-
-Issues can be filed at https://github.com/kubernetes/kubernetes/issues. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-### Code of Conduct
-
-Participation in the Kubernetes community is governed by the [Kubernetes
-Code of Conduct](code-of-conduct.md).
-
-### Contribution Guidelines
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information. Please note that [kubernetes/cri-api](https://github.com/kubernetes/cri-api)
-is a readonly mirror repository, all development is done at [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes).
 
 ## Change history
 
